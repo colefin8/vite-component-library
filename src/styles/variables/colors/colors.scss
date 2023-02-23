@@ -1,0 +1,48 @@
+/* for buttons/links */
+$aco-primary: #20C4F4;
+/* for accents/hovers */
+$aco-secondary: #1DB0DC;
+/* for accents/hovers */
+$aco-tertiary: #1A9DC3;
+
+/* default primary color */
+$aco-default-primary: var(--branding-button-background, #20C4F4);
+/* 110% opacity of primary */
+$aco-default-secondary: var(--branding-button-hover, #1DB0DC);
+/* 120% opacity of primary */
+$aco-default-tertiary: var(--branding-button-hover, #1DB0DC);
+
+$aco-menu-active: var(--branding-menu-active, #20C4F4);
+
+
+/* text and primary buttons */
+$aco-ui-900: #111827;
+/* subtext, dark icons */
+$aco-ui-600: #4B5563;
+/* icon buttons */
+$aco-ui-400: #9CA3AF;
+/* input strokes, disabled */
+$aco-ui-300: #D1D5DB;
+/* darker hover (hover on hover), pressed state */
+$aco-ui-200: #E5E7EB;
+/* backgrounds/hover */
+$aco-ui-100: #F3F4F6;
+/* off-white filler background */
+$aco-ui-50: #F9FAFB;
+/* white. its just white. */
+$aco-ui-white: #FFFFFF;
+
+/* error state text */
+$aco-danger-dark: #B40619;
+$aco-positive-dark: #18700A;
+$aco-warning-dark: #735302;
+
+/* error state icon */
+$aco-danger-medium: #DF6868;
+$aco-positive-medium: #52BB79;
+$aco-warning-medium: #E6C05D;
+
+/* error state background */
+$aco-danger-light: #FEE2E2;
+$aco-positive-light: #DEF4DE;
+$aco-warning-light: #FFF7D2;

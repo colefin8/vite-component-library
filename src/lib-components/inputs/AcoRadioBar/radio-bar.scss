@@ -1,0 +1,89 @@
+// This is for the white selection button, without it the cursor still shows up even though the inputs are disabled
+.aco-disabled {
+    .radio-bar__button {
+        cursor: not-allowed;
+    }
+}
+
+.radio-bar {
+    position: relative;
+    border-radius: $aco-border-radius-normal;
+    background-color: $aco-ui-100;
+    align-items: center;
+    border: none;
+    display: flex;
+    padding: 4px;
+    height: 40px;
+    box-sizing: border-box;
+    width: fit-content;
+
+    &--read-only {
+        background-color: transparent;
+        .radio-bar__button {
+            font-weight: 800;
+            cursor: default;
+        }
+    }
+
+    &--dark-background {
+        background-color: $aco-ui-200;
+    }
+
+    &--small {
+        height: 32px;
+    }
+
+    &__input {
+        position: absolute;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        margin: 0px;
+    }
+    &__marker {
+        position: absolute;
+        box-sizing: border-box;
+        background-color: $aco-ui-white;
+        border-radius: $aco-border-radius-small;
+        padding: 4px 10px;
+        transition: all $aco-animation-fast;
+        box-shadow: $aco-shadow-1;
+        color: transparent;
+        height: 32px;
+        &--small {
+            padding: 0px 12px;
+            height: 24px;
+        }
+    }
+    &__button {
+        margin: 8px 1px;
+        display: block;
+        transition: all .2s;
+        position: relative;
+        border-left: 1px solid transparent;
+        box-sizing: border-box;
+        padding: 0px 12px;
+        color: $aco-ui-600;
+        cursor: pointer;
+        &--selected {
+            color: $aco-ui-900;
+        }
+        &--pipe {
+            border-left: 1px solid $aco-ui-300;
+        }
+        &--small {
+            margin: 0px;
+        }
+
+        &-text {
+            //? line height has to be set manually because it determines the divider pipe size
+            line-height: 16px;
+        }
+    }
+}
+
+.slide {
+    &-enter-active, &-leave-active {
+        transition: all .5s;
+    }
+}

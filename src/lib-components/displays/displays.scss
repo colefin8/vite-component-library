@@ -1,0 +1,10 @@
+@import 'notifications/notifications';
+
+.aco-loading {
+    background: transparent url(https://res.cloudinary.com/dhkcpbx2w/image/upload/v1548179215/loading-new_k6t0di.gif) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    height: 32px;
+    vertical-align: middle;
+    width: 100%;
+}

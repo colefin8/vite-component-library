@@ -1,0 +1,36 @@
+# Overflow Tooltip Directive
+
+Place this directive on the element where you want to conditionally add a `title` attribute to an element. The `title` will only be applied if the element's 
+contents are overflowing.
+
+**This directive does not set any overflow styling.**
+**Any styles for handling overflow of an element's contents must be applied manually.**
+
+import { Story } from "@storybook/addon-docs";
+
+## Basic Configuration
+
+For the basic use case, the `title` attribute appears on the same element that is checked for overflow.
+
+<Story id="directives-overflowtooltip--default" />
+
+```html
+<p v-overflow-tooltip="Some text that will cause overflow to occur.">
+    Some text that will cause overflow to occur.
+</p>
+```
+
+## Custom Target Element
+
+You can optionally provide `targetElementId` if you want the `title` to appear on a different element than the one that is checked for overflow. 
+In this case, the element with an `id` matching `targetElementId` is checked for overflow and the element on which the directive is placed receives the `title`.
+
+<Story id="directives-overflowtooltip--custom-target" />
+
+```html
+<div v-overflow-tooltip="{ tooltipText: 'Some text that will cause overflow to occur.', targetElementId: 'overflow-target' }">
+    <p id="overflow-target">
+        Some text that will cause overflow to occur.
+    </p>
+</div>
+```

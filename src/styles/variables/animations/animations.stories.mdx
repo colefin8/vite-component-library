@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoAnimations from './animations.vue';
+
+<Meta title="Styles/Variables/Animations" component={AcoAnimations} />
+
+<Canvas>
+    <Story name="Animations">
+        {()=>{
+            return {
+                components: { AcoAnimations },
+                template: '<AcoAnimations />'
+            }
+        }}
+    </Story>
+</Canvas>

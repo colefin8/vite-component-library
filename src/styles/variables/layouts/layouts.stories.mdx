@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoLayouts from './layouts.vue';
+
+<Meta title="Styles/Variables/Layouts" component={AcoLayouts} />
+
+<Canvas>
+    <Story name="Layouts">
+        {()=>{
+            return {
+                components: { AcoLayouts },
+                template: '<AcoLayouts />'
+            }
+        }}
+    </Story>
+</Canvas>

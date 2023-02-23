@@ -1,0 +1,18 @@
+# Click Outside Directive
+
+Place this directive on the element that you want a window click listener to watch if outside of the element gets clicked.
+It is most commonly useful for dropdowns or other UI elements that have togglable content.
+
+import { Story } from "@storybook/addon-docs";
+
+## How to Use
+
+The directive takes a callback function that will fire whenever outside of the target element is clicked.
+
+<Story id="directives-clickoutside--default" />
+
+```html
+<aco-button :v-click-outside="onClickOutside">
+    Click me and nothing happens, click outside and an alert shows.
+</aco-button>
+```

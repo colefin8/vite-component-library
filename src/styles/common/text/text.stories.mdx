@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoText from './text.vue';
+
+<Meta title="Styles/Common/Text" component={AcoText} />
+
+<Canvas>
+    <Story name="Text">
+        {()=>{
+            return {
+                components: { AcoText },
+                template: '<AcoText />'
+            }
+        }}
+    </Story>
+</Canvas>

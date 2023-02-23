@@ -1,0 +1,128 @@
+.aco-p-xlarge, .aco-p-large, .aco-p-medium, .aco-p-small, .aco-p-xsmall,
+.aco-text-600,
+.aco-h1, .aco-h2, .aco-h3, .aco-h4,
+.aco-text, .aco-table-header, .aco-list-header {
+    color: $aco-ui-900;
+    font-family: 'Sofia', arial, sans-serif;
+    font-weight: normal; //400
+}
+
+.aco-text-600 {
+    color: $aco-ui-600;
+}
+
+.aco-h1, .aco-h2, .aco-h3, .aco-h4 {
+    font-weight: bold;
+}
+
+
+/* lh = line-height */
+/* ls = letter-spacing */
+
+/* normal text */
+
+/* xlarge text */
+$aco-text-xlarge: 18px;
+$aco-text-lh-xlarge: 28px;
+
+.aco-p-xlarge {
+    font-size: $aco-text-xlarge;
+    line-height: $aco-text-lh-xlarge;
+}
+
+/* large text */
+$aco-text-large: 16px;
+$aco-text-lh-large: 24px;
+
+.aco-p-large {
+    font-size: $aco-text-large;
+    line-height: $aco-text-lh-large;
+}
+
+/* medium text */
+$aco-text-medium: 14px;
+$aco-text-lh-medium: 22px;
+
+.aco-p-medium {
+    font-size: $aco-text-medium;
+    line-height: $aco-text-lh-medium;
+}
+
+/* small text */
+$aco-text-small: 12px;
+$aco-text-lh-small: 18px;
+
+.aco-p-small {
+    font-size: $aco-text-small;
+    line-height: $aco-text-lh-small;
+}
+
+/* xsmall text */
+$aco-text-xsmall: 11px;
+$aco-text-lh-xsmall: 16px;
+
+.aco-p-xsmall {
+    font-size: $aco-text-xsmall;
+    line-height: $aco-text-lh-xsmall;
+}
+
+/* xxsmall text */
+$aco-text-xxsmall: 7px;
+$aco-text-lh-xxsmall: 8px;
+
+/* default text */
+.aco-text {
+    font-size: $aco-text-large;
+}
+
+/* headings */
+$aco-heading-xlarge: 32px;
+$aco-heading-lh-xlarge: 36px;
+
+.aco-h1 {
+    font-size: $aco-heading-xlarge;
+    line-height: $aco-heading-lh-xlarge;
+}
+
+$aco-heading-large: 24px;
+$aco-heading-lh-large: 30px;
+
+.aco-h2 {
+    font-size: $aco-heading-large;
+    line-height: $aco-heading-lh-large;
+}
+
+$aco-heading-medium: 20px;
+$aco-heading-lh-medium: 28px;
+
+.aco-h3 {
+    font-size: $aco-heading-medium;
+    line-height: $aco-heading-lh-medium;
+}
+
+$aco-heading-small: 16px;
+$aco-heading-lh-small: 24px;
+
+.aco-h4 {
+    font-size: $aco-heading-small;
+    line-height: $aco-heading-lh-small;
+}
+
+/* table */
+$aco-table-lh: 14px;
+$aco-table-ls: 1px;
+
+.aco-table-header, .aco-list-header {
+    font-size: $aco-text-xsmall;
+    line-height: $aco-table-lh;
+    letter-spacing: $aco-table-ls;
+    text-transform: uppercase;
+}
+
+.aco-list-header {
+    color: $aco-ui-600;
+}
+
+.aco-table-header {
+    font-weight: bold; /* 700 */
+}

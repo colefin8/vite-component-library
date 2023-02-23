@@ -1,0 +1,198 @@
+@import '../../../styles/aco.scss';
+
+$table-border: solid 1px $aco-ui-200;
+
+.aco-left-right-picker {
+    display: grid;
+    grid-template-rows: 56px minmax(64px, auto);
+    grid-template-columns: minmax(192px, 30%) minmax(192px, auto);
+    height: 300px;
+    min-width: $aco-grid-medium;
+    max-width: $aco-grid-large;
+    border: solid 1px $aco-ui-300;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &--mobile {
+        grid-template-rows: 56px 1fr 1fr;
+        grid-template-columns: auto;
+        min-width: unset;
+        max-width: unset;
+        width: 100%;
+        height: $aco-grid-large;
+    }
+
+    &--full-width {
+        max-width: none;
+        width: 100%;
+    }
+
+    &.aco-disabled {
+        pointer-events: none;
+    }
+
+    &__search {
+        grid-column: 1/-1;
+        display: flex;
+        position: relative;
+        align-items: center;
+        padding: 8px;
+        border-bottom: $table-border;
+        
+        &-input {
+            height: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 36px 8px 16px;
+            background-color: $aco-ui-white;
+            border: solid 1px $aco-ui-300;
+            border-radius: $aco-border-radius-normal;
+        }
+
+        &-icon {
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 44px;
+        padding: 12px 16px;
+        box-sizing: border-box;
+        border-bottom: $table-border;
+        font-size: $aco-text-medium;
+        background-color: $aco-ui-white;
+
+        &-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &-action {
+            flex-shrink: 0;
+        }
+    }
+
+    &__left, &__right {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    &__left {
+        border-right: $table-border;
+    }
+    &--mobile &__left {
+        border: none;
+    }
+
+    &__right {
+        background-color: $aco-ui-100;
+    }
+    &--mobile &__right {
+        border-top: $table-border;
+    }
+
+    &__options, &__selected {
+        margin: 0;
+        padding: 4px;
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    /* Option and Selected Item Styles */
+    $height: 40px;
+    
+    &__option, &__selected-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        height: $height;
+        font-size: 14px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: $aco-ui-white;
+        transition: background-color $aco-animation-very-fast;
+
+        &-name {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    
+    &__option {
+        cursor: pointer;
+        &:hover, &:focus {
+            background-color: $aco-ui-100;
+        }
+    
+        &-icon {
+            color: $aco-ui-600;
+            transition: opacity $aco-animation-very-fast;
+            opacity: 0;
+        }
+        &:hover &-icon,
+        &:focus &-icon {
+            opacity: 1;
+        }
+    }
+    
+    &__selected-item {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 4px;
+        cursor: move;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        &--hover:hover, &:focus {
+            background-color: $aco-ui-200;
+        }
+        &--no-sort {
+            cursor: unset;
+        }
+        &--ghost {
+            opacity: 0.3;
+        }
+    
+        &-grab-handle {
+            padding: 0 4px;
+        }
+
+        &-name {
+            flex-grow: 1;
+            font-weight: bold;
+        }
+    
+        &-icon {
+            display: flex;
+            align-items: center;
+            height: $height;
+            padding: 0 8px;
+            cursor: pointer;
+            color: $aco-ui-400;
+        }
+    }
+}
+
+/* Animation Classes */
+.aco-lrp-option-enter-active,
+.aco-lrp-option-leave-active {
+    transition: all $aco-animation-very-fast;
+}
+
+.aco-lrp-option-enter,
+.aco-lrp-option-leave-to {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+

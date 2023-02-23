@@ -1,0 +1,17 @@
+.aco-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    
+    &-track {
+        background: $aco-ui-100;
+        border-radius: 4px;
+    }
+    
+    &-thumb {
+        background: $aco-ui-300;
+        border-radius: 4px;
+        &:hover {
+            background: $aco-ui-400;
+        }
+    }
+}

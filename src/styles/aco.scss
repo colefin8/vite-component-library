@@ -1,0 +1,22 @@
+/* modules used */
+@use 'sass:color';
+
+/* variables */
+@import 'variables/animations/animations';
+@import 'variables/colors/colors';
+@import 'variables/grid';
+@import 'variables/layouts/layouts';
+
+/* common - order of imports is sorted by level of importance */
+@import 'common/text/text';
+@import 'common/status/status'; // should come after text.scss as it overwrites colors
+@import 'common/disabled/disabled';
+@import 'common/scrollbar';
+
+/* components */
+// @import '../lib-components/buttons/buttons';
+// @import '../lib-components/dropdowns/dropdowns';
+@import '../lib-components/inputs/inputs';
+@import '../lib-components/inputs/media/media';
+// @import '../lib-components/switches/switches';
+@import '../lib-components/displays/displays';

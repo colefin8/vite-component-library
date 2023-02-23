@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoDisabled from './disabled.vue';
+
+<Meta title="Styles/Common/Disabled" component={AcoDisabled} />
+
+<Canvas>
+    <Story name="Disabled">
+        {()=>{
+            return {
+                components: { AcoDisabled },
+                template: '<AcoDisabled />'
+            }
+        }}
+    </Story>
+</Canvas>

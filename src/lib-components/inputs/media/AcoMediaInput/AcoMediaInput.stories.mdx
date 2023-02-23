@@ -1,0 +1,18 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import AcoMediaInputStory from './Story.vue';
+
+<Meta title="inputs/media/AcoMediaInput/AcoMediaInput" component={AcoMediaInputStory} />
+
+# AcoMediaInput
+
+<Canvas>
+  <Story name="All AcoMediaInputs" parameters={{controls: { hideNoControlsWarning: true }}}>
+    {() => {
+      return {
+        components: { AcoMediaInputStory },
+        template: `<aco-media-input-story/>`
+      };
+    }}
+  </Story>
+</Canvas>

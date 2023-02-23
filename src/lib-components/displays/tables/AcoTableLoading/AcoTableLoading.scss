@@ -1,0 +1,133 @@
+.aco-table-loading {
+    width: 100%;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        top: 0;
+
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 1)
+        );
+    }
+
+    &__loading-mask {
+        width: 100%;
+
+        background-image: linear-gradient(
+            90deg,
+            #e5e7eb,
+            #e5e7eb 23%,
+            #d1d5db 25%,
+            #d1d5db 27%,
+            #e5e7eb 29%,
+            #e5e7eb 63%,
+            #d1d5db 65%,
+            #d1d5db 67%,
+            #e5e7eb 69%
+        );
+
+        background-size: 500% 100%;
+        animation: gradient 4s linear infinite reverse;
+    }
+
+    &__row {
+        width: 100%;
+        height: 48px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    &__cutout-container {
+        overflow: hidden;
+        padding-right: 16px;
+
+        display: flex;
+        align-items: center;
+
+        &:nth-of-type(1),
+        &:nth-of-type(4) {
+            flex-grow: 2;
+        }
+
+        &:nth-of-type(2) {
+            flex-grow: 1;
+        }
+
+        &:nth-of-type(3) {
+            flex-grow: 3;
+        }
+
+        &:empty::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 18px;
+            border-radius: 8px;
+            box-shadow: 0 0 0 9999px white;
+        }
+
+        &:nth-of-type(4)::after {
+            width: 50%;
+        }
+    }
+
+    &__circles-container {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 0 16px 0 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 9999px white;
+        }
+    }
+
+    &__circles-container:nth-child(1) {
+        padding: 0 16px 0 8px;
+    }
+
+    &__header {
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            background-color: white;
+            height: 100%;
+        }        
+        &::before {
+            width: 44px;
+        }
+        &::after {
+            width: 72px;
+        }
+    }
+
+}
+
+
+/* Animation Classes */
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}

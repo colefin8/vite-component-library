@@ -1,0 +1,30 @@
+/* shadows */
+
+/* for all avatars */
+$aco-shadow-avatar: inset 0px 0px 2px rgba(0, 0, 0, 0.15);
+/* for widgets/tiles */
+$aco-shadow-1: 0px 2px 4px rgba(105, 112, 117, 0.15);
+/* for nav bars */
+$aco-shadow-2: 0px 8px 16px rgba(17, 17, 17, 0.1);
+/* for modals */
+$aco-shadow-3: 0px 24px 128px rgba(17, 17, 17, 0.25);
+
+
+/* borders */
+
+/* default for most things */
+$aco-border: 1px solid #1F2937;
+/* for icons */
+$aco-border-icon: 1.5px solid #1F2937;
+/* border when things are selected */
+$aco-border-active: 4px solid #1F2937;
+
+
+/* border-radii */
+
+/* for modals/tiles and large items */
+$aco-border-radius-large: 12px;
+/* default size */
+$aco-border-radius-normal: 8px;
+/* for small items under 40px or things within 8px boxes */
+$aco-border-radius-small: 4px;

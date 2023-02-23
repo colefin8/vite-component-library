@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoStatus from './status.vue';
+
+<Meta title="Styles/Common/Status" component={AcoStatus} />
+
+<Canvas>
+    <Story name="Status">
+        {()=>{
+            return {
+                components: { AcoStatus },
+                template: '<AcoStatus />'
+            }
+        }}
+    </Story>
+</Canvas>

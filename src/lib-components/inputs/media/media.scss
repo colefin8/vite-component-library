@@ -1,0 +1,226 @@
+@use 'sass:string';
+
+// Just pass a number for $border-radius, don't add px at the end; $border-color needs to be a hex code
+@mixin input-border($border-radius: 0, $border-color: $aco-ui-300) {
+    $border-color: string.slice("#{$border-color}", 2, -1); // strings are 1-indexed in sass
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='#{$border-radius}' ry='#{$border-radius}' stroke='%23#{$border-color}' stroke-width='2' stroke-dasharray='8' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+}
+
+// smi == single-media-input
+.aco-smi {
+    width: 100%;
+    max-width: 600px;
+
+    &__row {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__no-media-text {
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    &__media {
+        height: 160px;
+        width: 160px;
+        border-radius: $aco-border-radius-small;
+
+        &-container {
+            @extend .aco-smi__media;
+            position: relative;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: $aco-ui-100;
+            @include input-border(4);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 424px;
+        font-family: 'Sofia';
+        color: $aco-ui-600;
+
+        &-button-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        &-button {
+            width: max-content;
+            margin-right: 16px;
+        }
+
+        & p {
+            margin: 8px 0;
+        }
+    }
+}
+
+// mmi == multi-media-input
+.aco-mmi {
+    width: 404px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: $aco-ui-100;
+        gap: 4px;
+        padding: 8px;
+        height: 84px;
+        border-radius: $aco-border-radius-small;
+        border: solid 1px $aco-ui-300;
+        
+        .drop-border,
+        [class*="-solid"] {
+            border: none;
+        }
+        
+        &--empty {
+            @extend .aco-mmi__container;
+            border: none;
+            @include input-border(4);
+        }
+    }
+
+    &__media {
+        width: 32px;
+        height: 32px;
+        border-radius: $aco-border-radius-small;
+        object-fit: contain;
+        display: inline-block;
+        vertical-align: middle;
+
+        &-container {
+            @extend .aco-mmi__media;
+            position: relative;
+            margin-right: 4px;
+        }
+    }
+
+    &__add-text {
+        color: $aco-primary;
+        cursor: pointer;
+    }
+
+    &__remove-text {
+        color: $aco-danger-dark;
+        cursor: pointer;
+    }
+
+    &__options-text {
+        margin: 0;
+    }
+}
+
+.media-input {
+    &--danger {
+        background-color: $aco-danger-light;
+        @include input-border(4, $aco-danger-medium);
+        &-solid {
+            @extend .media-input--danger;
+            border: solid 1px $aco-danger-medium;
+            background-image: none;
+        }
+    }
+    &--warning {
+        background-color: $aco-warning-light;
+        @include input-border(4, $aco-warning-medium);
+        &-solid {
+            @extend .media-input--warning;
+            border: solid 1px $aco-warning-medium;
+            background-image: none;
+        }
+    }
+    &--positive {
+        background-color: $aco-positive-light;
+        @include input-border(4, $aco-positive-medium);
+        &-solid {
+            @extend .media-input--positive;
+            border: solid 1px $aco-positive-medium;
+            background-image: none;
+        }
+    }
+
+    &--alert {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+}
+
+.aco-media {
+    width: 100%;
+    height: 100%;
+    border-radius: $aco-border-radius-small;
+
+    &__background {
+        background-color: $aco-ui-50;
+
+        &--transparent {
+            background-color: transparent;
+        }
+    }
+
+    &__overlay {
+        @extend .aco-media;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &-background {
+            @extend .aco-media;
+            background-color: $aco-ui-900;
+            opacity: 0;
+        }
+
+        &-buttons {
+            @extend .aco-media__overlay;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+        }
+
+        &:hover {
+            & .aco-media__overlay-buttons {
+                opacity: 1;
+            }
+            & .aco-media__overlay-background {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    &--fill {
+        object-fit: fill;
+    }
+    &--contain {
+        object-fit: contain;
+    }
+    &--cover {
+        object-fit: cover;
+    }
+    &--none {
+        object-fit: none;
+    }
+    &--scale-down {
+        object-fit: scale-down;
+    }
+}
+
+.drop-border {
+    border: 4px dashed $aco-ui-400;
+    border-radius: $aco-border-radius-small;
+}

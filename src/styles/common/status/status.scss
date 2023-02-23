@@ -1,0 +1,67 @@
+@import '../../mixins/interactive.scss';
+
+.aco-status-text-danger {
+    @include interactive-text($aco-danger-dark);
+}
+.aco-status-text-positive {
+    @include interactive-text($aco-positive-dark);
+}
+.aco-status-text-warning {
+    @include interactive-text($aco-warning-dark);
+}
+.aco-status-text-neutral {
+    @include interactive-text($aco-ui-900);
+}
+
+.aco-status-text-medium-danger {
+    @include interactive-text($aco-danger-medium);
+}
+.aco-status-text-medium-positive {
+    @include interactive-text($aco-positive-medium);
+}
+.aco-status-text-medium-warning {
+    @include interactive-text($aco-warning-medium);
+}
+.aco-status-text-medium-neutral {
+    @include interactive-text($aco-ui-600);
+}
+
+.aco-status-background-light-danger {
+    background: $aco-danger-light;
+}
+.aco-status-background-light-positive {
+    background: $aco-positive-light;
+}
+.aco-status-background-light-warning {
+    background: $aco-warning-light;
+}
+.aco-status-background-light-neutral {
+    background: $aco-ui-100;
+}
+
+
+.aco-status-background-medium-danger {
+    background: $aco-danger-medium;
+}
+.aco-status-background-medium-positive {
+    background: $aco-positive-medium;
+}
+.aco-status-background-medium-warning {
+    background: $aco-warning-medium;
+}
+.aco-status-background-medium-neutral {
+    background: $aco-ui-400;
+}
+
+.aco-status-background-dark-danger {
+    background: $aco-danger-dark;
+}
+.aco-status-background-dark-positive {
+    background: $aco-positive-dark;
+}
+.aco-status-background-dark-warning {
+    background: $aco-warning-dark;
+}
+.aco-status-background-dark-neutral {
+    background: $aco-ui-600;
+}

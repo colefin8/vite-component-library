@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import AcoColors from './colors.vue';
+
+<Meta title="Styles/Variables/Colors" component={AcoColors} />
+
+<Canvas>
+    <Story name="Colors">
+        {()=>{
+            return {
+                components: { AcoColors },
+                template: '<AcoColors />'
+            }
+        }}
+    </Story>
+</Canvas>

@@ -1,0 +1,92 @@
+@import '../../../../styles/aco.scss';
+
+.aco-breadcrumb {
+    display: flex;
+    align-items: center;
+    
+    &--default &__caret {
+        color: $aco-default-primary;
+    }
+
+    &__caret {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: $aco-primary;
+    }
+
+    &-item {
+        flex-shrink: 10000; // shrink before the last item has to
+        padding: 0 3px;
+        min-width: 20px;
+        white-space: nowrap;
+        overflow-x: hidden;
+        cursor: pointer;
+        
+        &__link {
+            display: block;
+            text-decoration: none;
+        }
+        &__label, &__link {
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $aco-ui-600;
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    
+        &:last-of-type:not(.aco-breadcrumb__dropdown-crumb) {
+            flex-shrink: 1; // won't shrink until it has to
+            font-weight: bold;
+            cursor: default;
+
+            .aco-breadcrumb-item__label,
+            .aco-breadcrumb-item__link {
+                color: $aco-ui-900;
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    &__dropdown {
+        position: relative;
+        flex-shrink: 0;
+
+        &-body {
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1000;
+            padding: 8px 0;
+            width: fit-content;
+            max-width: $aco-grid-small;
+            background-color: $aco-ui-white;
+            box-shadow: $aco-shadow-2;
+            border-radius: $aco-border-radius-small;
+            &--visible {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &-crumb {
+            .aco-breadcrumb-item__label,
+            .aco-breadcrumb-item__link {
+                padding: 8px 16px;
+            }
+        }
+
+        &-ellipsis {
+            padding: 0 8px;
+            cursor: pointer;
+        }
+
+        &-ellipsis, &-crumb {
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}

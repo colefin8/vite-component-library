@@ -1,0 +1,61 @@
+.aco-inline-alert {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    box-sizing: border-box;
+    border-radius: $aco-border-radius-normal;
+    justify-content: space-between;
+    &__badge, &__text, &__links, &__links-container {
+        display: flex;
+        align-items: center;
+    }
+    &__badge {
+        padding: 4px;
+        border-radius: $aco-border-radius-small;
+        height: 28px;
+        box-sizing: border-box;
+
+        &--wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__icon {
+        color: $aco-ui-white;
+        font-size: 20px;
+    }
+    &__text {
+        flex: 1;
+        padding: 0 12px;
+        &-content {
+            margin: 0;
+        }
+    }
+    &__link {
+        font-size: $aco-text-medium;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color $aco-animation-very-fast;
+    }
+    &__divider {
+        margin: 0 12px;
+        border-left: 1px solid;
+        height: 16px;
+        display: inline-flex;
+    }
+}
+
+.aco-form-alert {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+
+    &__text {
+        @extend .aco-p-medium;
+        padding-top: 1px;
+        line-height: 18px;
+    }
+}

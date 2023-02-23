@@ -1,0 +1,39 @@
+@mixin interactive-text($color) {
+    &, &--interactive {
+        color: $color;
+    }
+    &--interactive:hover {
+        color: color.scale($color, $lightness: -40%);
+    }
+    &--interactive:active {
+        color: color.scale($color, $lightness: -60%);
+    }
+}
+
+@mixin interactive-property($property, $color, $is-base-color: true) {
+    @if ($is-base-color) {
+        & {
+            #{$property}: $color
+        }
+    }
+    &:hover:not(:disabled, .aco-disabled) {
+        #{$property}: color.scale($color, $lightness: -10%);
+    }
+    &:active:not(:disabled, .aco-disabled) {
+        #{$property}: color.scale($color, $lightness: -20%);
+    }
+}
+
+@mixin interactive-default-property($property, $color, $is-base-color: true) {
+    @if ($is-base-color) {
+        & {
+            #{$property}: $aco-default-primary;
+        }
+    }
+    &:hover:not(:disabled, .aco-disabled) {
+        #{$property}: $aco-default-secondary;
+    }
+    &:active:not(:disabled, .aco-disabled) {
+        #{$property}: $aco-default-tertiary;
+    }
+}

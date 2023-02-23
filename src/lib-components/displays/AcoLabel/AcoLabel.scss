@@ -1,0 +1,41 @@
+@import "./src/styles/aco.scss";
+
+.aco-label {
+    @extend .aco-text;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    height: 24px;
+    line-height: 20px;
+
+    &[readonly] {
+        color: $aco-ui-600;
+    }
+
+    label {
+        @extend .aco-p-large;
+        color: inherit;
+        margin: 0;
+        display: initial;
+        line-height: inherit;
+    }
+
+    .aco-icon {
+        height: 20px;
+    }
+
+    .aco-tooltip {
+        height: 20px;
+    }
+
+    .required-text {
+        font-family: inherit;
+        font-size: $aco-text-xsmall;
+        line-height: $aco-text-lh-xsmall;
+        color: $aco-danger-dark; 
+        margin: 0;
+        font-weight: 300;
+    }
+
+}

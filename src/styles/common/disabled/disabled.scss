@@ -1,0 +1,13 @@
+$aco-disabled-opacity: .4;
+.aco-disabled, button:disabled, input:disabled {
+    opacity: $aco-disabled-opacity;
+    cursor: not-allowed;
+}
+.aco-readonly {
+    border: none;
+    font-weight: 600;
+    cursor: default;
+}
+.disable-body-scroll {
+    overflow: hidden;
+}
