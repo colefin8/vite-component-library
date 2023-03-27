@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .parent {
     display: flex;
     flex-direction: column;
